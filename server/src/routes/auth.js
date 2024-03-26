@@ -1,9 +1,9 @@
-const express = require("express");
+import express from "express";
+import * as authController from "../controllers/authController";
 
 const router = express.Router();
 
-router.get("/login", (req, res) => {
-  res.status(200).json({ data: "Login route" });
-});
+router.post("/register", authController.register);
+router.post("/login", authController.login);
 
 export default router;
